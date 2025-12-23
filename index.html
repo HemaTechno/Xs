@@ -1,1 +1,31 @@
-Test
+<h2>إضافة سكربت</h2>
+
+<input id="title" placeholder="اسم السكربت"><br>
+<input id="desc" placeholder="الوصف"><br>
+<input id="slug" placeholder="اسم الرابط"><br>
+<textarea id="code" placeholder="الكود"></textarea><br>
+
+<button onclick="publish()">نشر</button>
+
+<script>
+async function publish() {
+  const data = {
+    title: title.value,
+    description: desc.value,
+    code: code.value,
+    slug: slug.value
+  };
+
+  const res = await fetch("/api/generate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+  alert("تم إنشاء الصفحة: " + result.url);
+}
+</script>
+
