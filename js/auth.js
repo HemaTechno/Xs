@@ -1,4 +1,4 @@
-<!-- auth.js -->
+
 <script type="module">
   import { db } from "./firebase-config.js";
   import { collection, addDoc, serverTimestamp } from
