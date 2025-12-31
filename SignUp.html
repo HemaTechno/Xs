@@ -13,162 +13,242 @@
     }
     
     body {
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      color: #2d3748;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+      line-height: 1.6;
     }
     
     .container {
       display: flex;
       flex-direction: row;
-      max-width: 900px;
+      max-width: 1000px;
       width: 100%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
       overflow: hidden;
-      background-color: #fff;
+      background-color: #ffffff;
+      min-height: 650px;
     }
     
     .logo-section {
       flex: 1;
-      background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
-      padding: 40px;
+      background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+      padding: 50px 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       color: white;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .logo-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.2) 0%, transparent 70%);
+      z-index: 0;
     }
     
     .logo-container {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       width: 100%;
+      position: relative;
+      z-index: 1;
     }
     
     .logo {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #3498db;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
     }
     
     .logo-tagline {
-      font-size: 1.1rem;
-      font-weight: 300;
-      opacity: 0.9;
-      max-width: 300px;
+      font-size: 1.15rem;
+      font-weight: 400;
+      opacity: 0.85;
+      max-width: 320px;
       margin: 0 auto;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #cbd5e1;
     }
     
-    .logo-image-placeholder {
-      width: 200px;
-      height: 200px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
+    .logo-image-container {
+      width: 280px;
+      height: 280px;
+      margin: 40px auto;
+      position: relative;
+      z-index: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 30px auto;
-      border: 2px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
-    .logo-image-placeholder span {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.6);
+    .logo-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 16px;
+      transition: transform 0.5s ease;
+    }
+    
+    .logo-image:hover {
+      transform: scale(1.03);
+    }
+    
+    .features {
+      margin-top: 30px;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 320px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+    
+    .feature-icon {
+      margin-right: 12px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
     
     .form-section {
       flex: 1;
-      padding: 50px 40px;
+      padding: 60px 50px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
     
     .form-header {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
     }
     
     .form-header h2 {
-      color: #2c3e50;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      font-weight: 600;
+      color: #1e293b;
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
     
     .form-header p {
-      color: #7f8c8d;
-      font-size: 1rem;
-      line-height: 1.5;
+      color: #64748b;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
     
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       position: relative;
     }
     
     .form-group label {
       display: block;
-      margin-bottom: 8px;
-      color: #2c3e50;
-      font-weight: 500;
+      margin-bottom: 10px;
+      color: #475569;
+      font-weight: 600;
       font-size: 0.95rem;
     }
     
     input {
       width: 100%;
-      padding: 14px 16px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      background-color: #f9f9f9;
+      padding: 16px 18px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      background-color: #f8fafc;
       font-size: 1rem;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
+      color: #1e293b;
+    }
+    
+    input::placeholder {
+      color: #94a3b8;
     }
     
     input:focus {
       outline: none;
-      border-color: #3498db;
-      background-color: #fff;
-      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+      border-color: #3b82f6;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
     }
     
     .password-requirements {
       font-size: 0.85rem;
-      color: #7f8c8d;
-      margin-top: 5px;
-      line-height: 1.4;
+      color: #64748b;
+      margin-top: 8px;
+      line-height: 1.5;
+      padding-left: 5px;
     }
     
-    button {
-      width: 100%;
-      padding: 16px;
-      border-radius: 8px;
+    .password-toggle {
+      position: absolute;
+      right: 16px;
+      top: 42px;
+      background: none;
       border: none;
-      background: linear-gradient(to right, #3498db, #2980b9);
+      color: #64748b;
+      cursor: pointer;
+      font-size: 0.9rem;
+      width: auto;
+      padding: 0;
+    }
+    
+    button[type="submit"] {
+      width: 100%;
+      padding: 18px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(to right, #3b82f6, #2563eb);
       color: #fff;
       font-size: 1.05rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 10px;
+      margin-top: 15px;
+      letter-spacing: 0.3px;
     }
     
-    button:hover {
-      background: linear-gradient(to right, #2980b9, #2573a7);
+    button[type="submit"]:hover {
+      background: linear-gradient(to right, #2563eb, #1d4ed8);
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
     }
     
-    button:active {
+    button[type="submit"]:active {
       transform: translateY(0);
     }
     
@@ -177,134 +257,250 @@
       margin-top: 20px;
       font-size: 0.95rem;
       min-height: 20px;
-      padding: 10px;
-      border-radius: 6px;
+      padding: 14px;
+      border-radius: 8px;
       transition: all 0.3s ease;
     }
     
     .success {
-      color: #27ae60;
-      background-color: rgba(39, 174, 96, 0.1);
+      color: #059669;
+      background-color: #d1fae5;
+      border: 1px solid #a7f3d0;
     }
     
     .error {
-      color: #e74c3c;
-      background-color: rgba(231, 76, 60, 0.1);
+      color: #dc2626;
+      background-color: #fee2e2;
+      border: 1px solid #fecaca;
     }
     
     .login-link {
       text-align: center;
-      margin-top: 25px;
-      color: #7f8c8d;
+      margin-top: 30px;
+      color: #64748b;
       font-size: 0.95rem;
     }
     
     .login-link a {
-      color: #3498db;
+      color: #3b82f6;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
     
     .login-link a:hover {
+      color: #2563eb;
       text-decoration: underline;
     }
     
-    @media (max-width: 768px) {
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 25px 0;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .divider:not(:empty)::before {
+      margin-right: 15px;
+    }
+    
+    .divider:not(:empty)::after {
+      margin-left: 15px;
+    }
+    
+    .social-login {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      color: #475569;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .social-btn:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+    
+    @media (max-width: 900px) {
       .container {
         flex-direction: column;
-        max-width: 500px;
+        max-width: 600px;
+        min-height: auto;
       }
       
       .logo-section {
-        padding: 30px 20px;
+        padding: 40px 30px;
       }
       
-      .logo-image-placeholder {
-        width: 150px;
-        height: 150px;
-        margin: 20px auto;
+      .logo-image-container {
+        width: 220px;
+        height: 220px;
+        margin: 30px auto;
+      }
+      
+      .form-section {
+        padding: 50px 40px;
+      }
+      
+      .logo {
+        font-size: 2.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        border-radius: 16px;
+      }
+      
+      .logo-section {
+        padding: 35px 25px;
+      }
+      
+      .logo-image-container {
+        width: 180px;
+        height: 180px;
+        margin: 25px auto;
       }
       
       .form-section {
         padding: 40px 30px;
       }
-    }
-    
-    @media (max-width: 480px) {
+      
       .logo {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
       
-      .logo-image-placeholder {
-        width: 120px;
-        height: 120px;
+      .form-header h2 {
+        font-size: 1.8rem;
       }
       
-      .form-section {
-        padding: 30px 20px;
+      .social-login {
+        flex-direction: column;
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <div class="container">
-    <!-- Left Section: Logo and Branding -->
+    <!-- Left Section: Logo, Image and Branding -->
     <div class="logo-section">
       <div class="logo-container">
         <div class="logo">Xscripty</div>
-        <p class="logo-tagline">Professional solutions for modern development</p>
+        <p class="logo-tagline">Professional development tools for modern creators</p>
       </div>
       
-      <!-- Placeholder for the site image -->
-      <div class="logo-image-placeholder">
-        <span>Logo / Image Here</span>
+      <!-- Site image from the provided URL -->
+      <div class="logo-image-container">
+        <img src="https://i.ibb.co/60mN2Hp6/20251231-193057.png" alt="Xscripty Logo" class="logo-image" id="siteLogo">
       </div>
       
-      <p class="logo-tagline">Join our community of developers and innovators. Create your account to get started with our powerful tools and resources.</p>
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-code" style="color: #60a5fa;"></i>
+          </div>
+          <span>Powerful scripting tools</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt" style="color: #60a5fa;"></i>
+          </div>
+          <span>Enterprise-grade security</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-rocket" style="color: #60a5fa;"></i>
+          </div>
+          <span>High-performance solutions</span>
+        </div>
+      </div>
     </div>
     
     <!-- Right Section: Registration Form -->
     <div class="form-section">
       <div class="form-header">
         <h2>Create Account</h2>
-        <p>Fill in your details to create your Xscripty account</p>
+        <p>Join Xscripty today and unlock powerful development tools</p>
       </div>
 
       <form id="signupForm">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter your username" required>
+          <input type="text" id="username" placeholder="Choose a username" required>
         </div>
         
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Create a strong password" required>
-          <div class="password-requirements">Password must be at least 8 characters with a mix of letters and numbers</div>
+          <input type="password" id="password" placeholder="Create a secure password" required>
+          <button type="button" class="password-toggle" id="togglePassword">
+            <i class="fas fa-eye"></i>
+          </button>
+          <div class="password-requirements">Use at least 8 characters with a mix of letters, numbers & symbols</div>
         </div>
         
         <div class="form-group">
           <label for="confirmPassword">Confirm Password</label>
           <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+          <button type="button" class="password-toggle" id="toggleConfirmPassword">
+            <i class="fas fa-eye"></i>
+          </button>
         </div>
         
         <button type="submit">Create Account</button>
       </form>
 
+      <div class="divider">Or continue with</div>
+      
+      <div class="social-login">
+        <button class="social-btn">
+          <i class="fab fa-google" style="color: #DB4437;"></i>
+          Google
+        </button>
+        <button class="social-btn">
+          <i class="fab fa-github"></i>
+          GitHub
+        </button>
+      </div>
+
       <div id="message"></div>
       
       <div class="login-link">
-        Already have an account? <a href="#">Sign In</a>
+        Already have an account? <a href="#">Sign in here</a>
       </div>
     </div>
   </div>
 
-  <!-- Firebase & Logic -->
   <script>
+    // Form submission handler
     document.getElementById('signupForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const username = document.getElementById('username').value;
+      const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value;
       const confirmPassword = document.getElementById('confirmPassword').value;
       const messageElement = document.getElementById('message');
@@ -313,37 +509,107 @@
       messageElement.textContent = '';
       messageElement.className = '';
       
-      // Basic validation
+      // Validation
       if (username.length < 3) {
         showMessage('Username must be at least 3 characters long.', 'error');
+        document.getElementById('username').focus();
+        return;
+      }
+      
+      if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+        showMessage('Username can only contain letters, numbers, and underscores.', 'error');
+        document.getElementById('username').focus();
         return;
       }
       
       if (password.length < 8) {
         showMessage('Password must be at least 8 characters long.', 'error');
+        document.getElementById('password').focus();
+        return;
+      }
+      
+      if (!/(?=.*[a-zA-Z])(?=.*\d)/.test(password)) {
+        showMessage('Password must contain both letters and numbers.', 'error');
+        document.getElementById('password').focus();
         return;
       }
       
       if (password !== confirmPassword) {
         showMessage('Passwords do not match. Please try again.', 'error');
+        document.getElementById('confirmPassword').focus();
         return;
       }
       
       // Simulate successful account creation
       showMessage(`Account created successfully! Welcome to Xscripty, ${username}.`, 'success');
       
-      // In a real application, you would send data to Firebase here
+      // Log data (in a real app, this would be sent to Firebase/backend)
       console.log('Account creation data:', { username, password });
       
       // Reset form after successful submission
-      document.getElementById('signupForm').reset();
+      setTimeout(() => {
+        document.getElementById('signupForm').reset();
+        messageElement.textContent = '';
+        messageElement.className = '';
+      }, 3000);
     });
     
+    // Toggle password visibility
+    document.getElementById('togglePassword').addEventListener('click', function() {
+      const passwordInput = document.getElementById('password');
+      const icon = this.querySelector('i');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.className = 'fas fa-eye-slash';
+      } else {
+        passwordInput.type = 'password';
+        icon.className = 'fas fa-eye';
+      }
+    });
+    
+    // Toggle confirm password visibility
+    document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+      const icon = this.querySelector('i');
+      
+      if (confirmPasswordInput.type === 'password') {
+        confirmPasswordInput.type = 'text';
+        icon.className = 'fas fa-eye-slash';
+      } else {
+        confirmPasswordInput.type = 'password';
+        icon.className = 'fas fa-eye';
+      }
+    });
+    
+    // Show message function
     function showMessage(text, type) {
       const messageElement = document.getElementById('message');
       messageElement.textContent = text;
       messageElement.className = type;
+      
+      // Auto-hide success messages after 5 seconds
+      if (type === 'success') {
+        setTimeout(() => {
+          messageElement.textContent = '';
+          messageElement.className = '';
+        }, 5000);
+      }
     }
+    
+    // Handle social login buttons
+    document.querySelectorAll('.social-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const provider = this.textContent.trim();
+        showMessage(`Redirecting to ${provider} authentication...`, 'success');
+      });
+    });
+    
+    // Add image load error handling
+    document.getElementById('siteLogo').addEventListener('error', function() {
+      console.error('Failed to load the site logo');
+      this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMUUyOTNCIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2MGE1ZmEiPnhTY3JpcHR5PC90ZXh0Pgo8L3N2Zz4=';
+    });
   </script>
 
 </body>
