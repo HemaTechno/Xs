@@ -35,4 +35,4 @@
       message.innerHTML = "❌ Error: " + error.message;
     }
   });
-</script>
+
