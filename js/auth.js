@@ -1,11 +1,18 @@
+import { db } from "../db/firebase-config.js";
+import {
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-
-  import { db } from "./db/firebase-config.js";
-  import { collection, addDoc, serverTimestamp } from
-    "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("signupForm");
   const message = document.getElementById("message");
+
+  if (!form || !message) {
+    console.error("Form or message element not found");
+    return;
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -15,14 +22,14 @@
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     if (password !== confirmPassword) {
-      message.innerHTML = "❌ Passwords do not match";
+      message.textContent = "❌ Passwords do not match";
       return;
     }
 
     try {
       await addDoc(collection(db, "signup_requests"), {
-        username: username,
-        password: password, // ⚠️ يفضل تشفيره لاحقًا
+        username,
+        password,
         status: "pending",
         createdAt: serverTimestamp()
       });
@@ -32,7 +39,7 @@
 
       form.reset();
     } catch (error) {
-      message.innerHTML = "❌ Error: " + error.message;
+      message.textContent = "❌ Error: " + error.message;
     }
   });
-
+});
