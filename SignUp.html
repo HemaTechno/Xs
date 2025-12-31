@@ -2,70 +2,349 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Create Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Xscripty</title>
   <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      background: #0f0f0f;
-      font-family: Arial, sans-serif;
-      color: #fff;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px;
     }
-    .box {
-      background: #151515;
-      border: 1px solid #ff0000;
-      padding: 25px;
-      width: 320px;
-      border-radius: 8px;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #ff0000;
-    }
-    input, button {
+    
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 900px;
       width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border-radius: 5px;
-      border: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #fff;
     }
+    
+    .logo-section {
+      flex: 1;
+      background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    
+    .logo-container {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    
+    .logo {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #3498db;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+    }
+    
+    .logo-tagline {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.9;
+      max-width: 300px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    
+    .logo-image-placeholder {
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      border: 2px dashed rgba(255, 255, 255, 0.2);
+    }
+    
+    .logo-image-placeholder span {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .form-section {
+      flex: 1;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .form-header {
+      margin-bottom: 35px;
+    }
+    
+    .form-header h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .form-header p {
+      color: #7f8c8d;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
     input {
-      background: #222;
-      color: #fff;
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
+    
+    input:focus {
+      outline: none;
+      border-color: #3498db;
+      background-color: #fff;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+    
+    .password-requirements {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+    
     button {
-      background: #ff0000;
+      width: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(to right, #3498db, #2980b9);
       color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
       cursor: pointer;
-      font-weight: bold;
+      transition: all 0.3s ease;
+      margin-top: 10px;
     }
+    
+    button:hover {
+      background: linear-gradient(to right, #2980b9, #2573a7);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
     #message {
       text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      min-height: 20px;
+      padding: 10px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .success {
+      color: #27ae60;
+      background-color: rgba(39, 174, 96, 0.1);
+    }
+    
+    .error {
+      color: #e74c3c;
+      background-color: rgba(231, 76, 60, 0.1);
+    }
+    
+    .login-link {
+      text-align: center;
+      margin-top: 25px;
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+    
+    .login-link a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        max-width: 500px;
+      }
+      
+      .logo-section {
+        padding: 30px 20px;
+      }
+      
+      .logo-image-placeholder {
+        width: 150px;
+        height: 150px;
+        margin: 20px auto;
+      }
+      
+      .form-section {
+        padding: 40px 30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 2.2rem;
+      }
+      
+      .logo-image-placeholder {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .form-section {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="box">
-    <h2>Create Account</h2>
+  <div class="container">
+    <!-- Left Section: Logo and Branding -->
+    <div class="logo-section">
+      <div class="logo-container">
+        <div class="logo">Xscripty</div>
+        <p class="logo-tagline">Professional solutions for modern development</p>
+      </div>
+      
+      <!-- Placeholder for the site image -->
+      <div class="logo-image-placeholder">
+        <span>Logo / Image Here</span>
+      </div>
+      
+      <p class="logo-tagline">Join our community of developers and innovators. Create your account to get started with our powerful tools and resources.</p>
+    </div>
+    
+    <!-- Right Section: Registration Form -->
+    <div class="form-section">
+      <div class="form-header">
+        <h2>Create Account</h2>
+        <p>Fill in your details to create your Xscripty account</p>
+      </div>
 
-    <form id="signupForm">
-      <input type="text" id="username" placeholder="Username" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-      <button type="submit">Create Account</button>
-    </form>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create a strong password" required>
+          <div class="password-requirements">Password must be at least 8 characters with a mix of letters and numbers</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+        </div>
+        
+        <button type="submit">Create Account</button>
+      </form>
 
-    <div id="message"></div>
+      <div id="message"></div>
+      
+      <div class="login-link">
+        Already have an account? <a href="#">Sign In</a>
+      </div>
+    </div>
   </div>
 
   <!-- Firebase & Logic -->
- <script type="module" src="./js/auth.js"></script>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const messageElement = document.getElementById('message');
+      
+      // Reset message
+      messageElement.textContent = '';
+      messageElement.className = '';
+      
+      // Basic validation
+      if (username.length < 3) {
+        showMessage('Username must be at least 3 characters long.', 'error');
+        return;
+      }
+      
+      if (password.length < 8) {
+        showMessage('Password must be at least 8 characters long.', 'error');
+        return;
+      }
+      
+      if (password !== confirmPassword) {
+        showMessage('Passwords do not match. Please try again.', 'error');
+        return;
+      }
+      
+      // Simulate successful account creation
+      showMessage(`Account created successfully! Welcome to Xscripty, ${username}.`, 'success');
+      
+      // In a real application, you would send data to Firebase here
+      console.log('Account creation data:', { username, password });
+      
+      // Reset form after successful submission
+      document.getElementById('signupForm').reset();
+    });
+    
+    function showMessage(text, type) {
+      const messageElement = document.getElementById('message');
+      messageElement.textContent = text;
+      messageElement.className = type;
+    }
+  </script>
 
 </body>
 </html>
