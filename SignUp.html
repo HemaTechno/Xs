@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Account</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #151515;
+      border: 1px solid #ff0000;
+      padding: 25px;
+      width: 320px;
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff0000;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      border: none;
+    }
+    input {
+      background: #222;
+      color: #fff;
+    }
+    button {
+      background: #ff0000;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #message {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Create Account</h2>
+
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Create Account</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <!-- Firebase & Logic -->
+  <script type="module" src="./db/firebase-config.js"></script>
+  <script type="module" src="./js/auth.js"></script>
+
+</body>
+</html>
