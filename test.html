@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Linkvertise Full Script</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linkvertise Full Page Script -->
+    <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
+    <script>
+        linkvertise(1264869, {
+            whitelist: [],
+            blacklist: [""]
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+        }
+        a {
+            display: block;
+            margin: 15px auto;
+            padding: 12px;
+            width: 90%;
+            max-width: 400px;
+            background: #0d6efd;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        a:hover {
+            background: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔗 تجربة Full Page Script</h1>
+    <p>أي رابط خارجي هيتحوّل تلقائيًا إلى Linkvertise</p>
+
+    <!-- روابط خارجية (هتتحول) -->
+    <a href="https://google.com" target="_blank">🔹 فتح Google</a>
+    <a href="https://youtube.com" target="_blank">🔹 فتح YouTube</a>
+    <a href="https://github.com" target="_blank">🔹 فتح GitHub</a>
+
+    <!-- رابط داخلي (مش هيتحول) -->
+    <a href="about.html">🔹 صفحة داخلية (مش Linkvertise)</a>
+
+</body>
+</html>
